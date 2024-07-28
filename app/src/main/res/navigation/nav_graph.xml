@@ -8,7 +8,14 @@
         android:id="@+id/fragmentHome"
         android:name="com.example.sam.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_postListFragment"
+            app:destination="@id/fragmentPostList" />
+        <action
+            android:id="@+id/action_homeFragment_to_postDetailFragment"
+            app:destination="@id/fragmentPostDetail" />
+    </fragment>
 
     <fragment
         android:id="@+id/fragmentSettings"
@@ -21,4 +28,24 @@
         android:name="com.example.sam.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/fragmentPostList"
+        android:name="com.example.sam.PostListFragment"
+        android:label="Post List"
+        tools:layout="@layout/fragment_post_list">
+        <action
+            android:id="@+id/action_postListFragment_to_postDetailFragment"
+            app:destination="@id/fragmentPostDetail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentPostDetail"
+        android:name="com.example.sam.PostDetailFragment"
+        android:label="Post Detail"
+        tools:layout="@layout/fragment_post_detail">
+        <action
+            android:id="@+id/action_postDetailFragment_to_postListFragment"
+            app:destination="@id/fragmentPostList" />
+    </fragment>
 </navigation>
