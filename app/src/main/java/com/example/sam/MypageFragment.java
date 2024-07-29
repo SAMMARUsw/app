@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,32 +13,32 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-public class PostDetailFragment extends Fragment {
+public class MypageFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_post_detail, container, false);
+        View view = inflater.inflate(R.layout.fragment_mypage, container, false);
 
-        // "목록으로" 버튼 설정
-        Button button_go_list = view.findViewById(R.id.go_list);
-        button_go_list.setOnClickListener(new View.OnClickListener() {
+        // 프로필 보기 버튼 설정
+        Button button_view_profile = view.findViewById(R.id.view_profile);
+        button_view_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 네비게이션을 통해 PostListFragment로 전환
+                // 네비게이션을 통해 ProfileFragment로 전환
                 NavController navController = Navigation.findNavController(v);
-                navController.navigate(R.id.action_postDetailFragment_to_postListFragment);
+                navController.navigate(R.id.action_mypageFragment_to_profileFragment);
             }
         });
 
-        // "지원서 작성" 버튼 설정
-        Button buttonApply = view.findViewById(R.id.apply);
-        buttonApply.setOnClickListener(new View.OnClickListener() {
+        // 로그아웃 텍스트 뷰 설정
+        TextView logoutTextView = view.findViewById(R.id.logout);
+        logoutTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 네비게이션을 통해 PostListFragment로 전환
+                // 네비게이션을 통해 LoginFragment로 전환
                 NavController navController = Navigation.findNavController(v);
-                navController.navigate(R.id.action_postDetailFragment_to_applyFragment);
+                navController.navigate(R.id.action_mypageFragment_to_loginFragment);
             }
         });
 

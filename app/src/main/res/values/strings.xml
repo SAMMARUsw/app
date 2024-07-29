@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">sam</string>
+    <string name="go_list_button">목록으로</string>
+    <string name="now_status">모집상태</string>
 </resources>

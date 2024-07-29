@@ -6,21 +6,25 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
-
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         ImageButton menuButton = findViewById(R.id.menu_button);
@@ -31,8 +35,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController);
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        NavController navController = navHostFragment.getNavController();
+
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+        // Add this listener to hide the toolbar in the login fragment
+        navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
+            @Override
+            public void onDestinationChanged(@NonNull NavController controller, @NonNull androidx.navigation.NavDestination destination, Bundle arguments) {
+                if (destination.getId() == R.id.fragmentLogin) { // Replace with your login fragment id
+                    if (getSupportActionBar() != null) {
+                        getSupportActionBar().hide();
+                    }
+                } else {
+                    if (getSupportActionBar() != null) {
+                        getSupportActionBar().show();
+                    }
+                }
+            }
+        });
     }
 
     private void showPopupMenu(View view) {
@@ -55,8 +78,8 @@ public class MainActivity extends AppCompatActivity {
         if (itemId == R.id.nav_home) {
             navController.navigate(R.id.fragmentHome);
             return true;
-        } else if (itemId == R.id.nav_settings) {
-            navController.navigate(R.id.fragmentSettings);
+        } else if (itemId == R.id.nav_mypage) {
+            navController.navigate(R.id.fragmentMypage);
             return true;
         } else if (itemId == R.id.nav_profile) {
             navController.navigate(R.id.fragmentProfile);
@@ -67,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavController navController = ((NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment)).getNavController();
         return navController.navigateUp() || super.onSupportNavigateUp();
     }
 }

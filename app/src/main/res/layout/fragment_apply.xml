@@ -11,7 +11,7 @@
         android:padding="30dp">
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/post_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="게시글 제목"
@@ -29,7 +29,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/post_writer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="작성자"
@@ -38,7 +38,7 @@
 
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/post_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="날짜" />
@@ -46,7 +46,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/now_state"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
@@ -64,11 +64,23 @@
             android:background="@color/black" />
 
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:text="지원서"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+
+        <EditText
             android:id="@+id/post_content"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="500dp"
+            android:minHeight="470dp"
+            android:gravity="top"
             android:padding="5dp"
             android:text="원문 내용"
             android:background="@drawable/post_border"/>
@@ -101,18 +113,19 @@
 
             <Button
                 android:id="@+id/apply"
+
                 android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:layout_margin="10px"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
-                android:text="지원서 작성"
+                android:text="제출하기"
                 android:textColor="#000000"
                 android:textSize="5pt" />
 
         </LinearLayout>
 
-        </LinearLayout>
+    </LinearLayout>
 
 
 
