@@ -81,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
         } else if (itemId == R.id.nav_mypage) {
             navController.navigate(R.id.fragmentMypage);
             return true;
-        } else if (itemId == R.id.nav_profile) {
-            navController.navigate(R.id.fragmentProfile);
+        } else if (itemId == R.id.nav_notification) {
+            navController.navigate(R.id.fragmentNotifications);
             return true;
         }
         return false;

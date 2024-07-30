@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="프로필 수정"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTextUniversity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="소속 대학" />
+
+    <EditText
+        android:id="@+id/editTextDepartment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="학과" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextYear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="학년" />
+
+        <EditText
+            android:id="@+id/editTextStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="학적상태" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextIntro"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:gravity="top"
+        android:hint="내 소개"
+        android:inputType="textMultiLine"
+        android:minHeight="100dp" />
+
+    <EditText
+        android:id="@+id/editTextExperience"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="공모전 경험"
+        android:minHeight="120dp"
+        android:gravity="top"
+        android:inputType="textMultiLine" />
+    <View
+
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+
+        android:layout_weight="1"
+
+        />
+    <Button
+        android:id="@+id/modifybtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="수정하기" />
+
+</LinearLayout>

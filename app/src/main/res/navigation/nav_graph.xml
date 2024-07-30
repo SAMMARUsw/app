@@ -57,7 +57,17 @@
         android:id="@+id/fragmentProfile"
         android:name="com.example.sam.ProfileFragment"
         android:label="Profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentModifyProfile"
+            app:destination="@id/fragmentModifyProfile" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentModifyProfile"
+        android:name="com.example.sam.ModProfileFragment"
+        android:label="ModifyProfile"
+        tools:layout="@layout/fragment_mod_profile" />
 
     <fragment
         android:id="@+id/fragmentPostList"
@@ -90,5 +100,26 @@
         <action
             android:id="@+id/action_postDetailFragment_to_applyFragment"
             app:destination="@id/fragmentApply" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentNotifications"
+        android:name="com.example.sam.NotificationsFragment"
+        android:label="notification"
+        tools:layout="@layout/fragment_notifications">
+        <action
+            android:id="@+id/action_notificationsFragment_to_applicationDetailFragment"
+            app:destination="@id/fragmentApplicationDetail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentApplicationDetail"
+        android:name="com.example.sam.ApplicationDetailFragment"
+        android:label="view notification"
+        tools:layout="@layout/fragment_application_detail">
+        <action
+            android:id="@+id/action_applicationDetailFragment_to_fragmentProfile"
+            app:destination="@id/fragmentProfile" />
+
     </fragment>
 </navigation>
