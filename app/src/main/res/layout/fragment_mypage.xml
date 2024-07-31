@@ -63,15 +63,7 @@
             android:layout_marginBottom="12dp" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="내 지원서"
-            android:padding="12dp"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true" />
-
-        <TextView
+            android:id="@+id/my_post"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="내 글"

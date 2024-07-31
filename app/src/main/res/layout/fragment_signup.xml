@@ -1,121 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="회원가입"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+    android:fillViewport="true"
+    android:background="#F9F9F9"> <!-- 배경 색상 추가 -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@drawable/background_shape"> <!-- 배경 모양 추가 -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="회원가입"
+            android:layout_marginBottom="10dp"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#333333" /> <!-- 텍스트 색상 변경 -->
+        <EditText
+            android:id="@+id/editTextname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="이름"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:background="@drawable/edittext_background" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"> <!-- 여백 추가 -->
+
+            <EditText
+                android:id="@+id/editTexteEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="E-mail"
+                android:padding="10dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/edittext_background" /> <!-- 배경 추가 -->
+
+            <Button
+                android:id="@+id/buttonCheckEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="중복 확인"
+                android:backgroundTint="#ffffff"
+                android:textColor="#000000" />
+        </LinearLayout>
 
         <EditText
-            android:id="@+id/editTextID"
-            android:layout_width="289dp"
+            android:id="@+id/editTextPW"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ID" />
+            android:hint="PW"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:background="@drawable/edittext_background" />
+
+        <EditText
+            android:id="@+id/editTextPWConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PW 확인"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edittext_background" />
+
+        <EditText
+            android:id="@+id/editTextPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="휴대폰 번호"
+            android:layout_marginBottom="16dp"
+            android:padding="10dp"
+            android:background="@drawable/edittext_background" />
+
+        <EditText
+            android:id="@+id/editTextUniversity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="소속 대학"
+            android:padding="10dp"
+            android:background="@drawable/edittext_background" />
+
+        <EditText
+            android:id="@+id/editTextDepartment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="학과"
+            android:padding="10dp"
+            android:background="@drawable/edittext_background" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextYear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="학년"
+                android:padding="10dp"
+                android:background="@drawable/edittext_background" />
+
+            <EditText
+                android:id="@+id/editTextStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="학적상태"
+                android:layout_marginBottom="16dp"
+                android:padding="10dp"
+                android:background="@drawable/edittext_background" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextInterest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="관심 분야"
+            android:padding="10dp"
+            android:background="@drawable/edittext_background" />
+
+        <EditText
+            android:id="@+id/editTextSkills"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="스킬"
+            android:layout_marginBottom="16dp"
+            android:padding="10dp"
+            android:background="@drawable/edittext_background" />
+
+
+        <EditText
+            android:id="@+id/editTextIntro"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="top"
+            android:hint="내 소개"
+            android:inputType="textMultiLine"
+            android:layout_marginBottom="16dp"
+            android:minHeight="100dp"
+            android:padding="10dp"
+            android:background="@drawable/edittext_background" />
+
+        <EditText
+            android:id="@+id/editTextExperience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="공모전 경험"
+            android:minHeight="120dp"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:padding="10dp"
+            android:background="@drawable/edittext_background" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
         <Button
-            android:id="@+id/buttonCheckID"
+            android:id="@+id/submitbtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:text="중복 확인" />
+            android:text="회원가입"
+            android:backgroundTint="#6200EE"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
-
-    <EditText
-        android:id="@+id/editTextPW"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="PW"
-        android:inputType="textPassword" />
-
-    <EditText
-        android:id="@+id/editTextPWConfirm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="PW 확인"
-        android:inputType="textPassword" />
-
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="E-mail"
-        android:inputType="textEmailAddress" />
-
-    <EditText
-        android:id="@+id/editTextUniversity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="소속 대학" />
-
-    <EditText
-        android:id="@+id/editTextDepartment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="학과" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/editTextYear"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="학년" />
-
-        <EditText
-            android:id="@+id/editTextStatus"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="학적상태" />
-    </LinearLayout>
-
-    <EditText
-        android:id="@+id/editTextIntro"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:gravity="top"
-        android:hint="내 소개"
-        android:inputType="textMultiLine"
-        android:minHeight="100dp" />
-
-    <EditText
-        android:id="@+id/editTextExperience"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="공모전 경험"
-        android:minHeight="120dp"
-        android:gravity="top"
-        android:inputType="textMultiLine" />
-    <View
-
-        android:layout_width="0dp"
-
-        android:layout_height="0dp"
-
-        android:layout_weight="1"
-
-        />
-    <Button
-        android:id="@+id/submitbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:text="회원가입" />
-
-</LinearLayout>
+</ScrollView>
