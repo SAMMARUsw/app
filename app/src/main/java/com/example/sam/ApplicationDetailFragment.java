@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 public class ApplicationDetailFragment extends Fragment {
 
@@ -37,7 +39,9 @@ public class ApplicationDetailFragment extends Fragment {
         btnViewProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle view profile button click
+                // 네비게이션을 통해 ProfileFragment로 전환
+                NavController navController = Navigation.findNavController(v);
+                navController.navigate(R.id.action_applicationDetailFragment_to_fragmentProfile);
             }
         });
 

@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 } else {
                     if (getSupportActionBar() != null) {
+
                         getSupportActionBar().show();
                     }
                 }

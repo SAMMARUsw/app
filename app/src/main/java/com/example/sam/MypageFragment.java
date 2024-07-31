@@ -31,6 +31,17 @@ public class MypageFragment extends Fragment {
             }
         });
 
+        // 내 글 텍스트 뷰 설정
+        TextView mypostTextView = view.findViewById(R.id.my_post);
+        mypostTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 네비게이션을 통해 LoginFragment로 전환
+                NavController navController = Navigation.findNavController(v);
+                navController.navigate(R.id.action_mypageFragment_to_PostlistFragment);
+            }
+        });
+
         // 로그아웃 텍스트 뷰 설정
         TextView logoutTextView = view.findViewById(R.id.logout);
         logoutTextView.setOnClickListener(new View.OnClickListener() {

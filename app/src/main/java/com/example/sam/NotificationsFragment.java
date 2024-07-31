@@ -32,7 +32,7 @@ public class NotificationsFragment extends Fragment {
         notificationList = new ArrayList<>();
         // Populate the notification list with dummy data
         for (int i = 0; i < 10; i++) {
-            notificationList.add(new NotificationItem("000님이 내 글 'AI 융합 공모전'에 지원서를 제출하였습니다.", "지원서 보기"));
+            notificationList.add(new NotificationItem("000님이 내 글 'AI 융합 공모전'에 지원서를 제출하였습니다."));
         }
 
         adapter = new NotificationsAdapter(notificationList, new NotificationsAdapter.OnItemClickListener() {
